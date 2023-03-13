@@ -4,6 +4,42 @@
 % Откомментируйте, чтобы отключить генерацию закладок в pdf
 % \PassOptionsToPackage{bookmarks=false}{hyperref}
 \documentclass[a5paper,10pt,twoside,openany,article]{memoir} %,draft
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{hyperref}
+\renewcommand{\listalgorithmname}{Список алгоритмов}%
+\floatname{algorithm}{Алгоритм}
+
+% Перевод команд псевдокода
+\algrenewcommand\algorithmicwhile{\textbf{До тех пока}}
+\algrenewcommand\algorithmicdo{\textbf{выполнять}}
+\algrenewcommand\algorithmicrepeat{\textbf{Повторять}}
+\algrenewcommand\algorithmicuntil{\textbf{Пока выполняется}}
+\algrenewcommand\algorithmicend{\textbf{Конец}}
+\algrenewcommand\algorithmicif{\textbf{Если}}
+\algrenewcommand\algorithmicelse{\textbf{иначе}}
+\algrenewcommand\algorithmicthen{\textbf{тогда}}
+\algrenewcommand\algorithmicfor{\textbf{Цикл}}
+\algrenewcommand\algorithmicforall{\textbf{Выполнить для всех}}
+\algrenewcommand\algorithmicfunction{\textbf{Функция}}
+\algrenewcommand\algorithmicprocedure{\textbf{Процедура}}
+\algrenewcommand\algorithmicloop{\textbf{Зациклить}}
+\algrenewcommand\algorithmicrequire{\textbf{Условия:}}
+\algrenewcommand\algorithmicensure{\textbf{Обеспечивающие условия:}}
+\algrenewcommand\algorithmicreturn{\textbf{Возвратить}}
+\algrenewtext{EndWhile}{\textbf{Конец цикла}}
+\algrenewtext{EndLoop}{\textbf{Конец зацикливания}}
+\algrenewtext{EndFor}{\textbf{Конец цикла}}
+\algrenewtext{EndFunction}{\textbf{Конец функции}}
+\algrenewtext{EndProcedure}{\textbf{Конец процедуры}}
+\algrenewtext{EndIf}{\textbf{Конец условия}}
+\algrenewtext{EndFor}{\textbf{Конец цикла}}
+\algrenewtext{BeginAlgorithm}{\textbf{Начало алгоритма}}
+\algrenewtext{EndAlgorithm}{\textbf{Конец алгоритма}}
+\algrenewtext{BeginBlock}{\textbf{Начало блока. }}
+\algrenewtext{EndBlock}{\textbf{Конец блока}}
+\algrenewtext{ElsIf}{\textbf{иначе если }}
 
 \input{common/setup}          % общие настройки шаблона
 \input{common/packages}       % Пакеты общие для диссертации и автореферата
@@ -36,7 +72,47 @@
 \typeout{Precompile images: \arabic{imgprecompile}}
 % Вывести информацию о версиях используемых библиотек в лог сборки
 \listfiles
+\lstset
+{ %Formatting for code in appendix
+    language=C++,
+    basicstyle=\footnotesize,
+    numbers=left,
+    stepnumber=1,
+    showstringspaces=false,
+    tabsize=1,
+    breaklines=true,
+    % breakatwhitespace=false,
+    numbersep=5pt,                   % how far the line-numbers are from the code
+    % captionpos=b,                    % sets the caption-position to bottom
+    commentstyle=\color{green},    % comment style
+    keywordstyle=\color{blue},       % keyword style
+    rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+    backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+    xleftmargin=3em,
+    frame=single,
+    framexleftmargin=1.5em
+}
 
+\lstset
+{ %Formatting for code in appendix
+    language=Python,
+    basicstyle=\footnotesize,
+    numbers=left,
+    stepnumber=1,
+    showstringspaces=false,
+    tabsize=1,
+    breaklines=true,
+    % breakatwhitespace=false,
+    numbersep=5pt,                   % how far the line-numbers are from the code
+    % captionpos=b,                    % sets the caption-position to bottom
+    commentstyle=\color{green},    % comment style
+    keywordstyle=\color{blue},       % keyword style
+    rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+    backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+    xleftmargin=3em,
+    frame=single,
+    framexleftmargin=1.5em
+}
 \begin{document}
 
 \input{Synopsis/title}        % Титульный лист

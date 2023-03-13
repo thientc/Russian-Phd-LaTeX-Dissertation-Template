@@ -38,6 +38,20 @@
         labelsep=figsep,                  % разделитель
 }
 
+%%% Алгоритмы %%%
+\DeclareCaptionLabelSeparator{algsep}{\alglabelsep} % нумерация Алгоритмов
+
+\captionsetup[alg]{
+        format=plain,                     % формат подписи (plain|hang)
+        font=normal,                      % нормальные размер, цвет, стиль шрифта
+        skip=.0pt,                        % отбивка под подписью
+        parskip=.0pt,                     % отбивка между параграфами подписи
+        position=below,                   % положение подписи
+        singlelinecheck=true,             % выравнивание по центру, если умещается в одну строку
+        justification=centerlast,         % центровка
+        labelsep=algsep,                  % разделитель
+}
+
 %%% Подписи подрисунков %%%
 \DeclareCaptionSubType{figure}
 \renewcommand\thesubfigure{\asbuk{subfigure}} % нумерация подрисунков
